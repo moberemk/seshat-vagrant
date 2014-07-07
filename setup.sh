@@ -20,6 +20,7 @@ pycurl
 tox
 twisted
 virtualenv
+tornado
 "
 
 pip install $PIP_PACKAGES
