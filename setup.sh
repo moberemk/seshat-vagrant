@@ -30,11 +30,7 @@ tornado
 
 pip install $PIP_PACKAGES
 
-# Install Redis
-wget http://download.redis.io/redis-stable.tar.gz
-tar xvzf redis-stable.tar.gz
-cd redis-stable
-make
-cd ../
-
-# TODO Install Postgres here
+# Install Redis from a PPA
+sudo add-apt-repository -y ppa:rwky/redis
+sudo apt-get update
+sudo apt-get install -y redis-server
