@@ -11,8 +11,6 @@ python3-pip
 python-dev
 libcurl4-openssl-dev
 python-software-properties
-postgresql
-postgresql-contrib
 "
 
 apt-get -y install $APT_PACKAGES
@@ -26,6 +24,7 @@ sudo python3 get-pip.py
 # Install pip packages now that it uses Python3
 PIP_PACKAGES="
 tornado
+pymongo
 "
 
 pip install $PIP_PACKAGES
@@ -37,4 +36,9 @@ cd redis-stable
 make
 cd ../
 
-# TODO Install Postgres here
+# Install MongoDB
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
+sudo apt-get update
+sudo apt-get install mongodb-org
