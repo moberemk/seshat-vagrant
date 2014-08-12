@@ -29,12 +29,10 @@ pymongo
 
 pip install $PIP_PACKAGES
 
-# Install Redis
-wget http://download.redis.io/redis-stable.tar.gz
-tar xvzf redis-stable.tar.gz
-cd redis-stable
-make
-cd ../
+# Install Redis from a PPA
+add-apt-repository -y ppa:rwky/redis
+apt-get update
+apt-get install -y redis-server
 
 # Install MongoDB
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
